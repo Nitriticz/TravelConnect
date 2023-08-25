@@ -1,0 +1,7 @@
+{
+  "name": "TravelConnect",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
