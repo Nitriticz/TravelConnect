@@ -1,27 +1,29 @@
-#container {
-  text-align: center;
-
+* {
+  color: #e2eafc;
+}
+.background {
+  background: url(../../assets/img/background.jpg) no-repeat 100% 100%;
+  height: 100%;
+  filter: blur(2px);
+  -webkit-filter: blur(2px);
+}
+.container {
   position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 0;
 }
-
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+ion-button {
+  margin-bottom: 1rem;
+  text-transform: initial;
+  font-weight: bold;
+  transition: 0.5s ease;
 }
-
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+ion-button:hover {
+  --background: #bbd0ff;
+  color: #2d2d30;
 }
-
-#container a {
-  text-decoration: none;
+.btnUser{
+  --background: #c8b6ff;
+}
+.btnPubs{
+  --background: #b8c0ff;
 }

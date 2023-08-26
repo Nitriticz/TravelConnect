@@ -1,20 +1,22 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div class="background"></div>
+  <div class="flex-center container">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>La red de los viajeros</ion-card-subtitle>
+        <ion-card-title class="logo">TravelConnect</ion-card-title>
+      </ion-card-header>
+    
+      <ion-card-content>
+        Nos dedicamos a facilitar la interacción y colaboración entre viajeros que comparten destinos similares o están interesados en experiencias similares durante sus viajes.
+      </ion-card-content>
+      
+      <div class="flex-center">
+        <ion-button shape="round" fill="solid" class="btnPubs" routerLink="/publications">Ver Publicaciones</ion-button>
+      </div>
+      <div class="flex-center">
+        <ion-button shape="round" fill="solid" class="btnUser">Ver Usuarios</ion-button>
+      </div>
+    </ion-card>
   </div>
 </ion-content>

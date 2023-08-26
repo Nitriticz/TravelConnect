@@ -1,0 +1,15 @@
+.hashtags {
+    color: #E7C6FF;
+}
+.container {
+    max-width: 580px;
+    display: flex;
+    background: linear-gradient(90deg, #FFD6FF,#E7C6FF,#C8B6FF,#B8C0FF,#BBD0FF);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.center {
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(45deg, #232323,#343434);
+}

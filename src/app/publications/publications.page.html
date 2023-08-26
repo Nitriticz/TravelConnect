@@ -1,0 +1,32 @@
+<ion-content>
+  <div class="center">
+    <div class="container">
+      <ion-card *ngFor="let publication of publications" class="ion-activatable ripple-parent">
+        <ion-ripple-effect></ion-ripple-effect>
+        <img alt="{{publication.title}}" src={{publication.photo}} />
+        <ion-card-header>
+          <ion-card-title>{{publication.title}}</ion-card-title>
+          <ion-card-subtitle>User</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          {{publication.description}}
+        </ion-card-content>
+        <ion-card-content>
+          <ion-list>
+            <ion-list-header>
+              <ion-label><ion-icon name="location-outline"></ion-icon>Hoteles en la Zona</ion-label>
+            </ion-list-header>
+            <ion-item *ngFor="let hotel of publication.hotels">
+              <ion-label>{{hotel}}</ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-card-content>
+        <ion-card-content>
+          <p *ngFor="let hashtag of publication.hashtags" class="hashtags">
+            {{hashtag}}
+          </p>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>
