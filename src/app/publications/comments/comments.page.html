@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="header">
+      <ion-button fill="clear" class="btnBack" [routerLink]="['/publications']"><ion-icon name="chevron-back-outline"></ion-icon>Volver</ion-button>
+      <ion-title>{{publication.title}}</ion-title>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="center">
+    <div class="container">
+      <ion-card>
+        <img alt="{{publication.title}}" src={{publication.photo}} />
+        <ion-chip [routerLink]="['/users',publisher.id]">
+          <ion-avatar>
+            <img alt="{{publisher.name}}" src="assets/img/profiles/{{publisher.username}}.jpg" />
+          </ion-avatar>
+          <ion-label>{{publisher.name}}</ion-label>
+        </ion-chip>
+        <ion-card-header>
+          <ion-card-title class="title">Comentarios</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-list lines="full">
+            <ion-item *ngFor="let comment of comments; let i=index" text-wrap>
+              <ion-label>
+                <ion-chip [routerLink]="['/users',users[i].id]">
+                  <ion-avatar>
+                    <img alt="{{users[i].name}}" src="assets/img/profiles/{{users[i].username}}.jpg" />
+                  </ion-avatar>
+                  <ion-label>{{users[i].name}}</ion-label>
+                </ion-chip>
+                <br>
+                {{comment.content}}
+              </ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>

@@ -1,15 +1,25 @@
 <ion-content>
   <div class="center">
     <div class="container">
-      <ion-card *ngFor="let publication of publications" class="ion-activatable ripple-parent">
+      <ion-card *ngFor="let publication of publications; let i=index" class="ion-activatable ripple-parent" [routerLink]="['/publications', publication.id]">
         <ion-ripple-effect></ion-ripple-effect>
         <img alt="{{publication.title}}" src={{publication.photo}} />
         <ion-card-header>
           <ion-card-title>{{publication.title}}</ion-card-title>
-          <ion-card-subtitle>User</ion-card-subtitle>
+          <ion-chip [routerLink]="['/users',users[i].id]">
+            <ion-avatar>
+              <img alt="{{users[i].name}}" src="assets/img/profiles/{{users[i].username}}.jpg" />
+            </ion-avatar>
+            <ion-label>{{users[i].name}}</ion-label>
+          </ion-chip>
         </ion-card-header>
         <ion-card-content>
           {{publication.description}}
+        </ion-card-content>
+        <ion-card-content>
+          <p *ngFor="let hashtag of publication.hashtags" class="hashtags">
+            {{hashtag}}
+          </p>
         </ion-card-content>
         <ion-card-content>
           <ion-list>
@@ -20,11 +30,6 @@
               <ion-label>{{hotel}}</ion-label>
             </ion-item>
           </ion-list>
-        </ion-card-content>
-        <ion-card-content>
-          <p *ngFor="let hashtag of publication.hashtags" class="hashtags">
-            {{hashtag}}
-          </p>
         </ion-card-content>
       </ion-card>
     </div>

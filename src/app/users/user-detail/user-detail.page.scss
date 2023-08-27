@@ -1,0 +1,28 @@
+.center {
+    min-height: 100%;
+}
+.container {
+    align-items: center;
+}
+ion-card {
+    height: fit-content;
+    width: 90%;
+    text-align: center;
+}
+ion-list {
+    background-color: #131313;
+}
+ion-item {
+    color: #EAEAEA;
+    --background: #131313;
+}
+ion-item>ion-label {
+    text-align: justify;
+    white-space: initial;
+    margin: 0.4rem 0 0.4rem 0;
+}
+img {
+    margin-top: 1rem;
+    border-radius: 8rem;
+    width: 40%;
+}

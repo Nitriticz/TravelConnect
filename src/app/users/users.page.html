@@ -1,0 +1,21 @@
+<ion-content>
+  <div class="center">
+    <div class="container">
+      <ion-list line="full">
+        <ion-list-header>
+          <ion-label class="title"><ion-icon name="people-outline"></ion-icon>Lista de Usuarios</ion-label>
+        </ion-list-header>
+        <ion-item *ngFor="let user of users">
+          <ion-label>
+            <ion-chip [routerLink]="['/users',user.id]">
+              <ion-avatar>
+                <img alt={{user.username}} src="assets/img/profiles/{{user.username}}.jpg" />
+              </ion-avatar>
+              <ion-label>{{user.name}}</ion-label>
+            </ion-chip>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
+  </div>
+</ion-content>

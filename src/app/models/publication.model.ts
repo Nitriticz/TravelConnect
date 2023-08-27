@@ -1,5 +1,6 @@
 export interface Publication {
-    id: number,
+    id: string,
+    userId: string,
     title: string,
     photo: string,
     description: string,

@@ -13,7 +13,29 @@ const routes: Routes = [
   },
   {
     path: 'publications',
-    loadChildren: () => import('./publications/publications.module').then( m => m.PublicationsPageModule)
+    children: [
+      {
+        path: '',
+        loadChildren: () => import('./publications/publications.module').then( m => m.PublicationsPageModule)
+      },
+      {
+        path: ':publicationId',
+        loadChildren: () => import('./publications/comments/comments.module').then( m => m.CommentsPageModule)
+      },
+    ]
+  },
+  {
+    path: 'users',
+    children: [
+      {
+        path: '',
+        loadChildren: () => import('./users/users.module').then( m => m.UsersPageModule)
+      },
+      {
+        path: ':userId',
+        loadChildren: () => import('./users/user-detail/user-detail.module').then( m => m.UserDetailPageModule)
+      },
+    ]
   },
 ];
 
