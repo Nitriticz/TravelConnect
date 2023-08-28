@@ -164,4 +164,9 @@ export class CommentsService {
   getComments(id: string): Comment[] {
     return [...this.comments.filter(comment => comment.publicationId === id)]
   }
+
+  addComment(comment: Comment): boolean {
+    this.comments.push(comment);
+    return false
+  }
 }

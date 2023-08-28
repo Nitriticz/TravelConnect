@@ -1,5 +1,6 @@
 ion-list {
     background-color: #131313;
+    margin-bottom: 3rem;
 }
 ion-item {
     color: #EAEAEA;
@@ -12,4 +13,22 @@ ion-item>ion-label {
 }
 ion-card>ion-chip {
     margin-left: 1rem;
+}
+.commentBox {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+.commentBox>ion-card {
+    width: 90%;
+    box-shadow: 0 0 15px black;
+}
+
+.btnSend {
+    --background: #C8B6FF;
+    box-shadow: 0 0 10px #C8B6FF;
 }

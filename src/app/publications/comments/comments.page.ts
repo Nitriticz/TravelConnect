@@ -6,6 +6,7 @@ import { UsersService } from 'src/app/services/users.service';
 import { Publication } from '../../models/publication.model';
 import { Comment } from '../../models/comment.model';
 import { User } from '../../models/user.model';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-comments',
@@ -13,7 +14,7 @@ import { User } from '../../models/user.model';
   styleUrls: ['./comments.page.scss'],
 })
 export class CommentsPage implements OnInit {
-
+  name = new FormControl('');
   publication!: Publication
   users: User[] = []
   comments : Comment[] = []
@@ -26,7 +27,7 @@ export class CommentsPage implements OnInit {
       if(!params) {
         console.log("Publicación no encontrada")
       } else {
-        const publicationId= params.get('publicationId')
+        const publicationId = params.get('publicationId')
         this.publication = this.publicacionsService.getPublication(publicationId as string)
         this.publisher = this.usersService.getUser(this.publication.userId)
         this.comments = this.commentsService.getComments(publicationId as string)
