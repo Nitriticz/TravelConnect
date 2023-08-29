@@ -1,7 +1,9 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <div class="header">
-      <ion-button fill="clear" class="btnBack" [routerLink]="['/users']"><ion-icon name="chevron-back-outline"></ion-icon>Volver</ion-button>
+      <ion-buttons slot="start">
+        <ion-back-button text="" icon="chevron-back-outline" class="btnBack"></ion-back-button>
+      </ion-buttons>
       <ion-title>Detalles de Usuario</ion-title>
     </div>
   </ion-toolbar>

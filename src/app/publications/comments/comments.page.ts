@@ -7,6 +7,7 @@ import { Publication } from '../../models/publication.model';
 import { Comment } from '../../models/comment.model';
 import { User } from '../../models/user.model';
 import { FormControl } from '@angular/forms';
+import { IonInput } from '@ionic/angular';
 
 @Component({
   selector: 'app-comments',
@@ -36,5 +37,12 @@ export class CommentsPage implements OnInit {
         })
       }
     })
+  }
+
+  sendComment(comment: IonInput) {
+    if ((comment.value as string).length > 0) {
+      this.commentsService.addComment(comment.value as string, this.publication.id, '6')
+      comment.value = ''
+    }
   }
 }

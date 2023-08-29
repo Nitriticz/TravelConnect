@@ -7,6 +7,7 @@ import { Comment } from '../models/comment.model'
 export class CommentsService {
 
   private comments: Comment[] = [
+    /*
     {
       id: '1',
       publicationId: '1',
@@ -37,6 +38,7 @@ export class CommentsService {
       content: '¡Paris es siempre una buena idea! Disfruta de todos los encantos que esta ciudad tiene para ofrecer. 🇫🇷✨',
       userId: '1'
     },
+    */
     {
       id: '6',
       publicationId: '2',
@@ -165,8 +167,13 @@ export class CommentsService {
     return [...this.comments.filter(comment => comment.publicationId === id)]
   }
 
-  addComment(comment: Comment): boolean {
-    this.comments.push(comment);
-    return false
+  addComment(comment: string, publicationId: string, userId: string) {
+    const newComment: Comment = {
+      id: this.comments.length + 1 + '',
+      publicationId: publicationId,
+      content: comment,
+      userId: userId
+    }
+    this.comments.push(newComment);
   }
 }

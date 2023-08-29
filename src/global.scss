@@ -87,6 +87,7 @@ ion-item {
     display: flex;
     justify-content: center;
     background: linear-gradient(45deg, #232323,#343434);
+    min-height: 90vh;
 }
 ion-chip {
     --color: #EAEAEA;

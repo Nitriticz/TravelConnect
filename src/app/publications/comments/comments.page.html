@@ -1,7 +1,9 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <div class="header">
-      <ion-button fill="clear" class="btnBack" [routerLink]="['/publications']"><ion-icon name="chevron-back-outline"></ion-icon>Volver</ion-button>
+      <ion-buttons slot="start">
+        <ion-back-button text="" icon="chevron-back-outline" class="btnBack" defaultHref="/publications"></ion-back-button>
+      </ion-buttons>
       <ion-title>{{publication.title}}</ion-title>
     </div>
   </ion-toolbar>
@@ -11,18 +13,22 @@
   <div class="center">
     <div class="container">
       <ion-card>
-        <img alt="{{publication.title}}" src={{publication.photo}} />
         <ion-chip [routerLink]="['/users',publisher.id]">
           <ion-avatar>
             <img alt="{{publisher.name}}" src="assets/img/profiles/{{publisher.username}}.jpg" />
           </ion-avatar>
           <ion-label>{{publisher.name}}</ion-label>
+          <p>{{publisher.username}}</p>
         </ion-chip>
+        <img alt="{{publication.title}}" src={{publication.photo}} />
         <ion-card-header>
           <ion-card-title class="title">Comentarios</ion-card-title>
         </ion-card-header>
         <ion-card-content>
           <ion-list lines="full">
+            <div class="noComments" *ngIf="comments.length === 0">
+              No hay comentarios aún <br> ¡Se el primero en comentar!
+            </div>
             <ion-item *ngFor="let comment of comments; let i=index" text-wrap>
               <ion-label>
                 <ion-chip [routerLink]="['/users',users[i].id]">
@@ -45,10 +51,12 @@
 <div class="commentBox">
   <ion-card>
     <ion-item>
-      <ion-input aria-label="Comment" placeholder="Publique un comentario"></ion-input>
-      <ion-button type="button" class="btnSend">
-        <ion-icon name="send"></ion-icon>
-      </ion-button>
+      <form (ngSubmit)="sendComment(commentInput)">
+        <ion-input aria-label="Comment" placeholder="Publica un comentario" #commentInput></ion-input>
+        <ion-button type="submit" class="btnSend">
+          <ion-icon slot="icon-only" name="send"></ion-icon>
+        </ion-button>
+      </form>
     </ion-item>
   </ion-card>
 </div>
